@@ -1,0 +1,15 @@
+name: "g11n radar"
+
+description: "scan globalization issues in repo"
+
+inputs:
+  access-token:
+    description: 'github token'
+    required: true
+  skip:
+    description: 'comma separated folders, like: abc/,xyz/,foo/'
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
