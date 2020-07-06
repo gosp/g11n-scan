@@ -2219,8 +2219,7 @@ async function handleEvent(accessToken, json) {
 async function run() {
   try {
     const skipList = core.getInput('skip');
-    let accessToken = core.getInput("repoToken");
-    console.log("access token: " + accessToken);
+    const accessToken = core.getInput("repoToken");
     if (!accessToken) {
       core.setFailed('cannot get accessToken');
       return;
