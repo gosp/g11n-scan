@@ -2209,7 +2209,7 @@ async function handleEvent(accessToken, json) {
     // This action will not currently work for pull requests from forks 
     // -- like is common in open source projects
     // -- because the token for forked pull request workflows does not have write permissions.
-    if (!github.payload.pull_request.head.fork) {
+    if (!github.context.payload.pull_request.head.fork) {
       // review comments
       await generateReviews(octokit, json);
     }
