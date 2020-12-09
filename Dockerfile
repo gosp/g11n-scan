@@ -1,4 +1,4 @@
-FROM citrixg11n/radar:20.7.31
+FROM citrixg11n/radar:20.12.8
 
 ADD dist/index.js /
 
