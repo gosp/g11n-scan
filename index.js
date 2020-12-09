@@ -97,7 +97,7 @@ async function run() {
     const report = path.resolve(project, 'report.json');
     core.debug("project: " + project);
     const skips = skipList.split(',');
-    await exec.exec(radar, ['-p', project, '-l', 5, '-d', report, 'rule', '--skip', 'bundlegen/', ...skips]);
+    await exec.exec(radar, ['-p', project, '-d', report, 'rule', '--skip', 'bundlegen/', ...skips]);
     const data = await fs.promises.readFile(report);
     var json = JSON.parse(data);
     if (json.errors == 0) {
